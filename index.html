@@ -232,26 +232,21 @@ const firebaseConfig = {
   measurementId: "G-J8S0GNS8VR"
 };
 
-firebase.initializeApp(firebaseConfig);
-};
-  };
-  if(window.__fbSdkFailed || typeof firebase === 'undefined'){
-    document.addEventListener('DOMContentLoaded', function(){
-      var el = document.getElementById('fb-loading-error');
-      var spinner = document.querySelector('#fb-loading > div:first-child');
-      var txt = document.querySelector('#fb-loading > div:nth-child(2)');
-      if(spinner) spinner.style.display = 'none';
-      if(txt) txt.textContent = 'Connection problem';
-      if(el){
-        el.style.display = 'block';
-        el.textContent = "Couldn't load Firebase from Google's servers. Check your internet connection, disable any ad/content blocker for this page, and reload. If this keeps happening, open this file in a normal browser tab (not an in-app preview) and check the browser console for the exact network error.";
-      }
-    });
-  } else {
-    firebase.initializeApp(firebaseConfig);
-  }
-</script>
-
+if(window.__fbSdkFailed || typeof firebase === 'undefined'){
+  document.addEventListener('DOMContentLoaded', function(){
+    var el = document.getElementById('fb-loading-error');
+    var spinner = document.querySelector('#fb-loading > div:first-child');
+    var txt = document.querySelector('#fb-loading > div:nth-child(2)');
+    if(spinner) spinner.style.display = 'none';
+    if(txt) txt.textContent = 'Connection problem';
+    if(el){
+      el.style.display = 'block';
+      el.textContent = "Couldn't load Firebase.";
+    }
+  });
+} else {
+  firebase.initializeApp(firebaseConfig);
+}
 <!-- LOADING OVERLAY - shown until data arrives from Firebase, hides the login form until then -->
 <div id="fb-loading" style="position:fixed;inset:0;background:linear-gradient(160deg,#1a2d5a 0%,#2a4080 100%);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
   <div style="width:44px;height:44px;border-radius:50%;border:3px solid rgba(255,255,255,.25);border-top-color:#fff;animation:fbspin 0.8s linear infinite;"></div>
