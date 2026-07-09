@@ -238,15 +238,17 @@ if(window.__fbSdkFailed || typeof firebase === 'undefined'){
     var spinner = document.querySelector('#fb-loading > div:first-child');
     var txt = document.querySelector('#fb-loading > div:nth-child(2)');
     if(spinner) spinner.style.display = 'none';
-    if(txt) txt.textContent = 'Connection problem';
-    if(el){
-      el.style.display = 'block';
-      el.textContent = "Couldn't load Firebase.";
-    }
-  });
+if(txt) txt.textContent = 'Connection problem';
+if(el){
+  el.style.display = 'block';
+  el.textContent = "Couldn't load Firebase.";
+}
+});
 } else {
   firebase.initializeApp(firebaseConfig);
 }
+</script>
+
 <!-- LOADING OVERLAY - shown until data arrives from Firebase, hides the login form until then -->
 <div id="fb-loading" style="position:fixed;inset:0;background:linear-gradient(160deg,#1a2d5a 0%,#2a4080 100%);z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
   <div style="width:44px;height:44px;border-radius:50%;border:3px solid rgba(255,255,255,.25);border-top-color:#fff;animation:fbspin 0.8s linear infinite;"></div>
@@ -254,10 +256,6 @@ if(window.__fbSdkFailed || typeof firebase === 'undefined'){
   <div id="fb-loading-error" style="display:none;margin-top:14px;padding:0 30px;text-align:center;font-size:12px;color:#ffb4a8;max-width:320px;"></div>
 </div>
 <style>@keyframes fbspin{to{transform:rotate(360deg);}}</style>
-
-<div class="menu-overlay" id="menu-overlay" onclick="closeMenus()"></div>
-<div class="menu-drawer" id="menu-drawer">
-  <div class="menu-hdr">
     <div id="menu-av-wrap"></div>
     <div class="menu-name" id="menu-name">—</div>
     <div class="menu-role" id="menu-role">Mar Patros Youth</div>
