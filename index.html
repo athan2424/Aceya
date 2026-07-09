@@ -223,12 +223,17 @@ body{background:#eef0f3;color:var(--txt);font-family:-apple-system,BlinkMacSyste
 <script>
   // TODO: paste your actual config from the Firebase console (Project settings > General > Your apps)
   var firebaseConfig = {
-    apiKey: "PASTE_YOUR_API_KEY",
-    authDomain: "PASTE_YOUR_PROJECT.firebaseapp.com",
-    projectId: "PASTE_YOUR_PROJECT_ID",
-    storageBucket: "PASTE_YOUR_PROJECT.appspot.com",
-    messagingSenderId: "PASTE_YOUR_SENDER_ID",
-    appId: "PASTE_YOUR_APP_ID"
+   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAwY-6Gi-2EQvq3AQCOEqZHTe9SdtV6VOY",
+  authDomain: "aceya-app.firebaseapp.com",
+  databaseURL: "https://aceya-app-default-rtdb.firebaseio.com",
+  projectId: "aceya-app",
+  storageBucket: "aceya-app.firebasestorage.app",
+  messagingSenderId: "1033796157316",
+  appId: "1:1033796157316:web:8d4874f7374becd6aee7d1",
+  measurementId: "G-J8S0GNS8VR"
+};
   };
   if(window.__fbSdkFailed || typeof firebase === 'undefined'){
     document.addEventListener('DOMContentLoaded', function(){
