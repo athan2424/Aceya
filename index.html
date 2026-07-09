@@ -234,6 +234,9 @@ const firebaseConfig = {
   appId: "1:1033796157316:web:8d4874f7374becd6aee7d1",
   measurementId: "G-J8S0GNS8VR"
 };
+
+firebase.initializeApp(firebaseConfig);
+};
   };
   if(window.__fbSdkFailed || typeof firebase === 'undefined'){
     document.addEventListener('DOMContentLoaded', function(){
